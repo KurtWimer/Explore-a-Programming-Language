@@ -42,7 +42,7 @@ void main(string[] args)
 	auto sw = StopWatch(AutoStart.yes);
 	selectionsort(array);
 	sw.stop();
-	writeln("Time elapsed: %f",sw.peek());
+	writeln("Time elapsed: ",sw.peek());
 	writeln(array);
 	return;
 }
