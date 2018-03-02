@@ -1,5 +1,6 @@
-Import std.datetime.systime.clock;
+Import std.datetime.systime.clock;//Timing element
 Import std.array;
+Import std.algorithm.mutation;	//Swap Function
 
 /*
 *Function: selectionsort
@@ -17,12 +18,7 @@ void selectionsort(int [] array){
 			if (array[i] > min) min_loc = i;
 		}
 		//Checks if a smaller value has been found and swaps
-		if(min_loc != i)
-		{
-			int temp = array[i];
-			array[i] = array[min_loc];
-			array[min_loc] = temp;
-		}
+		if(min_loc != i) swap(aarray[i],array[min_loc])
 	}
 }
 
