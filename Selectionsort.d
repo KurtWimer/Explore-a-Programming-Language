@@ -11,7 +11,7 @@ Import std.algorithm.mutation;	//Swap Function
 */
 void selectionsort(int [] array){
 	for (size_t i = 0; i<array.length; ++i){
-		int min = array[num_sorted];
+		int min = array[i];
 		size_t min_loc = i;
 		//Finds smallest value remaining
 		for(size_t j = i; j<array.length; ++j;){
