@@ -1,6 +1,6 @@
-Import std.datetime.systime.clock;//Timing element
-Import std.array;
-Import std.algorithm.mutation;	//Swap Function
+import std.datetime.systime.clock;//Timing element
+import std.array;
+import std.algorithm.mutation;	//Swap Function
 
 /*
 *Function: selectionsort
@@ -14,19 +14,19 @@ void selectionsort(int [] array){
 		int min = array[i];
 		size_t min_loc = i;
 		//Finds smallest value remaining
-		for(size_t j = i; j<array.length; ++j;){
+		for(size_t j = i; j<array.length; ++j){
 			if (array[i] > min) min_loc = i;
 		}
 		//Checks if a smaller value has been found and swaps
-		if(min_loc != i) swap(aarray[i],array[min_loc])
+		if(min_loc != i) swap(aarray[i],array[min_loc]);
 	}
 }
 
-void void main(string[] args)
+void main(string[] args)
 {
 	//Import and read file into an array
-	auto file = File(unsorted.txt,"r")
-	int array[];
+	auto file = File(unsorted.txt,"r");
+	int[] array;
 	//Sets default arraysize change based upon application
 	array.length = 100;
 	auto filled = 0;
