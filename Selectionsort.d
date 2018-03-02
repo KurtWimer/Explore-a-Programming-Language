@@ -1,4 +1,4 @@
-import std.datetime.systime.clock;//Timing element
+//import std.datetime.systime.clock;//Timing element
 import std.array;
 import std.algorithm.mutation;	//Swap Function
 
@@ -36,9 +36,9 @@ void main(string[] args)
 	array.length = array.filled;
 
 	//Time and perform selectionsort
-	auto sw = StopWatch(AutoStart.yes);
+	//auto sw = StopWatch(AutoStart.yes);
 	selectionsort(array);
-	sw.stop();
-	writeln("Time elapsed: %f",sw.peek());
+	//sw.stop();
+	//writeln("Time elapsed: %f",sw.peek());
 	Return;
 }
