@@ -1,6 +1,7 @@
-import std.datetime.systime.clock;//Timing element
-import std.array;
-import std.algorithm.mutation;	//Swap Function
+import std.datetime.systime;
+import std.datetime.stopwatch;
+import std.stdio;
+import std.file;
 
 /*
 *Function: selectionsort
@@ -9,36 +10,39 @@ import std.algorithm.mutation;	//Swap Function
 *Paramaters: int array to be sorted
 *Return: Void
 */
-void selectionsort(int [] array){
-	for (size_t i = 0; i<array.length; ++i){
+void selectionsort(int [] array)
+{
+	for (int i = 0; i < array.length; ++i){
 		int min = array[i];
-		size_t min_loc = i;
+		int min_loc = i;
 		//Finds smallest value remaining
-		for(size_t j = i; j<array.length; ++j){
-			if (array[i] > min) min_loc = i;
+		for(int j = i+1; j < array.length; ++j){
+			if (array[j] < min)
+			{
+				min_loc = j;
+				min = array[j];
+			}
 		}
 		//Checks if a smaller value has been found and swaps
-		if(min_loc != i) swap(aarray[i],array[min_loc]);
+		if(min_loc != i)
+		{
+			int temp = array[i];
+			array[i] = array[min_loc];
+			array[min_loc] = temp;
+		}
 	}
 }
 
 void main(string[] args)
 {
 	//Import and read file into an array
-	auto file = File(unsorted.txt,"r");
-	int[] array;
-	//Sets default arraysize change based upon application
-	array.length = 100;
-	auto filled = 0;
-	while(file.freadf("%d\n",array[filled++])) if(filled = array.length - 1) array.length *=2;
-	
-	//Trims array length so defuat entries do not interfere with the sort
-	array.length = array.filled;
+	auto array = slurp!(int)("unsorted.txt", "%d");
 
 	//Time and perform selectionsort
 	auto sw = StopWatch(AutoStart.yes);
 	selectionsort(array);
 	sw.stop();
 	writeln("Time elapsed: %f",sw.peek());
-	Return;
+	writeln(array);
+	return;
 }
