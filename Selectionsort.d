@@ -3,11 +3,11 @@ import std.datetime.stopwatch;
 import std.stdio;
 import std.file;
 
-/*
+/**
 *Function: selectionsort
 *Purpose: Sorts a given array of any length using the selection sort algorithm
 *Effeciency: O(n^2)
-*Paramaters: int array to be sorted
+*Params: array = array to be sorted
 *Return: Void
 */
 void selectionsort(int [] array)
