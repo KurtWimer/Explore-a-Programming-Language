@@ -7,7 +7,6 @@ class Cubes {
 		size_t first; ///Maintains the starting element. Change to this using popfront() should be avoided
 
 	public:
-
 	///Creates a new cubelist that starts from initial
 	this(size_t initial =0){first = initial;} 
 
@@ -51,7 +50,7 @@ void main()
 	Cubes cubelist = new Cubes();
 	if (isRandomAccessRange!Cubes) writeln("Cubes is a Random Access Range!\n");
 	else writeln("Housten we have an issue\n");
-	if (isRandomAccessRange!Cubes) writeln("Cubes has Slicing!\n");
+	if (hasSlicing!Cubes) writeln("Cubes has Slicing!\n");
 	else writeln("No cake for you.\n");
 	writeln("Cubes between 3-10 are:\n");
 	foreach(i; cubelist[3..10]){writeln(i);}
