@@ -1,5 +1,6 @@
 import std.stdio;
 import std.file;
+import std.datetime.stopwatch;
 import std.algorithm;
 
 void quicksort(int[] array, int lo, int hi)
