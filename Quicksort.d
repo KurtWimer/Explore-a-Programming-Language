@@ -19,9 +19,11 @@ void main(string[] args)
 	//Import and read file into an array
 	auto array = slurp!(int)("unsorted.txt", "%d");
 
-	//Perform selectionsort
+	//Perform quicksort and time how long it will take
+	auto sw = StopWatch(AutoStart.yes);
 	quicksort(array, 0, cast (int) array.length - 1);
+	sw.stop();
 	writeln(array);
-
+	writeln("Time elapsed: ",sw.peek());
 	return;
 }
