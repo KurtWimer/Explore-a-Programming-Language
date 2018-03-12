@@ -1,13 +1,16 @@
-import core.vararg; //used for functions with unknown number of parameters
 import std.stdio;
 import std.range;
-
+/**
+*Purpose: Infinite Random Access Rank that returns index values^3
+*/
 class Cubes {
 	private:
 		size_t first; ///Maintains the starting element. Change to this using popfront() should be avoided
 
 	public:
-	///Creates a new cubelist that starts from initial
+	/**Purpose: Creates a new cubelist 
+	*Params: initial = offset from which values will be calculated
+	*/
 	this(size_t initial =0){first = initial;} 
 
 	enum empty = false;   //Infinite range is never empty
@@ -19,7 +22,7 @@ class Cubes {
 
 	/**
 	*Purpose: Overrides syntax of "cubelist[x]" to return the value of x^3
-	*Return: the cube at index location
+	*Return: the cube at parameter 'index' location
 	*/
 	int opIndex(size_t index){
 		int ind = cast(int)index;
@@ -32,8 +35,8 @@ class Cubes {
 		return new Cubes(first);};
 
 	/**
-	*Purpose: Overrides syntax of "cubelist[x..j]" to return the value of x^3
-	*Return: An array of elements greater than or equal to x and less than j, cubed
+	*Purpose: Overrides syntax of "cubelist[min..max]" to return the value of x^3
+	*Return: An array of elements greater than or equal to 'min' and less than 'max', cubed
 	*/	
 	@property int[] opSlice(size_t min, size_t max){
 		int[] a;
